@@ -4,15 +4,9 @@ export DATA_DIR='data/hotpotqa_2wiki_searchr1'
 export WANDB_MODE=offline
 WAND_PROJECT='RAGRL'
 
-export BASE_MODEL='/apdcephfs/share_303945704/hunyuan/plusonewu/Qwen2.5-7B'
-export EXPERIMENT_NAME='LessNegative_AdjustPositive_TurnLevel_Ingroup_ratio0.5'
-# export EVAL_MODEL_ROOT_PATH='/apdcephfs/share_303945704/hunyuan/plusonewu/searchr1_data/verl_checkpoints'
-# export EXPERIMENT_NAME='3B-Prepend_think_token-goodquery_softpenalty-LessNegative_AdjustPositive_OnlyAnswer_Ingroup_ratio1.0-constant'
-# export STEP=206
-# export BASE_MODEL=$EVAL_MODEL_ROOT_PATH/$EXPERIMENT_NAME/actor/global_step_$STEP
-# # export EXPERIMENT_NAME='baseline-NoWarmUp-prepend_think_token-LessNegative_TurnLevel_ratio0.95-step205ckpt-LLD'
-# # export EXPERIMENT_NAME=$EXPERIMENT_NAME-step$STEP-easy_fast_test
-# export EXPERIMENT_NAME=test
+export BASE_MODEL=''
+export EXPERIMENT_NAME=''
+
 
 # set -x
 export VLLM_ATTENTION_BACKEND=XFORMERS # vllm + qwen2-7b with flash_attn has some issues
@@ -50,7 +44,7 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo_format \
     actor_rollout_ref.actor.pg_loss_ratio=1.75 \
     actor_rollout_ref.actor.pos_neg_both=false \
     actor_rollout_ref.actor.save_index.enable=false \
-    actor_rollout_ref.actor.save_index.save_path=/apdcephfs/share_303945704/hunyuan/plusonewu/searchr1_data/entropy/$EXPERIMENT_NAME \
+    actor_rollout_ref.actor.save_index.save_path='' \
     actor_rollout_ref.actor.save_rollout.enable=true \
     actor_rollout_ref.actor.save_rollout.save_path=./rollout/$EXPERIMENT_NAME \
     actor_rollout_ref.rollout.log_prob_micro_batch_size=128 \
@@ -81,7 +75,7 @@ PYTHONUNBUFFERED=1 python -m verl.trainer.main_ppo_format \
     trainer.total_epochs=1 \
     trainer.total_training_steps=410 \
     trainer.default_hdfs_dir=null \
-    trainer.default_local_dir=/apdcephfs/share_303945704/hunyuan/plusonewu/searchr1_data/verl_checkpoints/$EXPERIMENT_NAME \
+    trainer.default_local_dir=''
     max_turns=4 \
     trainer.reward_function=f1 \
     retriever.url="http://127.0.0.1:8000/retrieve" \
