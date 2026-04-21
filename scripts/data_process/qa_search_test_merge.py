@@ -54,7 +54,7 @@ if __name__ == '__main__':
     for data_source in data_sources:
 
         if data_source != 'strategyqa':
-            dataset = datasets.load_dataset('RUC-NLPIR/FlashRAG_datasets', data_source, HF_TOKEN = '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')
+            dataset = datasets.load_dataset('RUC-NLPIR/FlashRAG_datasets', data_source, HF_TOKEN = 'your_hf_token')
         else:
             dataset = datasets.load_dataset('json', data_files="/home/peterjin/mnt/data/strategyqa/test_correct.jsonl")
 

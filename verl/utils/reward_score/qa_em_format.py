@@ -211,8 +211,6 @@ def compute_score_em(solution_str, ground_truth, method='strict', reward_functio
         format_score = 1
     if answer is not None:
         answer_score = check_function[reward_function](answer, ground_truth['target'])
-        if not is_valid_format:
-            format_score = 0.3
     else:
         if reward_function == "all":
             answer_score = (0,0,0)

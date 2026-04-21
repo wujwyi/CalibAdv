@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     for data_source in data_sources:
 
-        dataset = datasets.load_dataset('RUC-NLPIR/FlashRAG_datasets', data_source, token = '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')
+        dataset = datasets.load_dataset('RUC-NLPIR/FlashRAG_datasets', data_source, token = 'your_hf_token')
 
         train_dataset = dataset['train']
 
