@@ -1,10 +1,6 @@
 # Negative Advantage Is a Double-Edged Sword: Calibrating Advantage in GRPO for Deep Search
 
 <p align="center">
-  <a href="http://arxiv.org/abs/2604.18235"><strong>📄 Paper Link</strong></a>
-</p>
-
-<p align="center">
   <img src="calibadv_overview.png" alt="Overview of CalibAdv" width="88%" />
 </p>
 <p align="center"><em>Overview of CalibAdv</em></p>
